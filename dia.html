@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan para todo el día</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Plan para todo el día</h1>
+
+    <form id="planForm" class="card">
+
+    <label>¿Qué quieres generar ahora?</label>
+    <select id="franja">
+        <option value="mañana">Mañana</option>
+        <option value="comida">Comida</option>
+        <option value="tarde">Tarde</option>
+        <option value="cena">Cena</option>
+        <option value="noche">Noche</option>
+    </select>
+
+    <label>Presupuesto máximo (€): <span id="sliderValue">50</span></label>
+    <input type="range" id="presupuesto" min="0" max="100" step="5" value="50">
+
+    <label>Ubicación:</label>
+    <select id="lugar">
+        <option value="">Cualquiera</option>
+        <option value="donosti">Donosti</option>
+        <option value="vitoria">Vitoria</option>
+        <option value="oiartzun">Oiartzun</option>
+    </select>
+
+    <button type="submit">Generar plan</button>
+</form>
+    <div id="resultado"></div>
+    <div id="planesGuardados"></div>
+    <div id="aceptarDiaBtn"></div>
+</div>
+
+<!-- Fotos -->
+<img src="images/dia/foto1.jpg" class="floating left1" alt="Foto 1">
+<img src="images/dia/foto2.jpg" class="floating left2" alt="Foto 2">
+<img src="images/dia/foto3.jpg" class="floating left3" alt="Foto 3">
+<img src="images/dia/foto4.jpg" class="floating right1" alt="Foto 4">
+<img src="images/dia/foto5.jpg" class="floating right2" alt="Foto 5">
+<img src="images/dia/foto6.jpg" class="floating right3" alt="Foto 6">
+
+<!-- Carga el SDK de EmailJS-->
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+  // Inicializa EmailJS con tu Public Key
+  emailjs.init({
+    publicKey: "zh9_teCiitJuv2xDq"
+  });
+</script>
+
+
+<script src="planes-data.js"></script>
+<script src="script-dia.js"></script>
+</body>
+</html>

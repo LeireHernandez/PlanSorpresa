@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Planes para hacer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Planes para hacer ✨</h1>
+
+    <form id="planForm" class="card">
+        <label>Tiempo</label>
+        <select id="tiempo">
+            <option value="soleado">Soleado</option>
+            <option value="nublado">Nublado</option>
+            <option value="variable">Variable</option>
+            <option value="lluvia">Lluvia</option>
+        </select>
+
+        <label>Presupuesto: <span id="presupuestoValor">50</span>€</label>
+        <input type="range" id="presupuesto" min="0" max="100" value="50" step="5">
+
+        <label>Tiempo disponible: <span id="duracionValor">12</span> horas</label>
+        <input type="range" id="duracion" min="1" max="24" value="12" step="1">
+
+        <label>Lugar</label>
+        <select id="lugar">
+            <option value="oiartzun">Oiartzun</option>
+            <option value="donosti">Donosti</option>
+            <option value="vitoria">Vitoria</option>
+        </select>
+
+        <label>Nivel de actividad</label>
+        <select id="actividad">
+            <option value="sedentario">Sedentario</option>
+            <option value="moderado">Moderado</option>
+            <option value="activo">Activo</option>
+        </select>
+
+        <button type="submit">Generar plan</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<!-- Fotos -->
+<img src="images/planes/foto1.jpg" class="floating left1" alt="Foto 1">
+<img src="images/planes/foto2.jpg" class="floating left2" alt="Foto 2">
+<img src="images/planes/foto3.jpg" class="floating left3" alt="Foto 3">
+<img src="images/planes/foto4.jpg" class="floating right1" alt="Foto 4">
+<img src="images/planes/foto5.jpg" class="floating right2" alt="Foto 5">
+<img src="images/planes/foto6.jpg" class="floating right3" alt="Foto 6">
+
+<!-- Carga el SDK de EmailJS-->
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+  // Inicializa EmailJS con tu Public Key
+  emailjs.init({
+    publicKey: "zh9_teCiitJuv2xDq"
+  });
+</script>
+
+<script src="planes-data.js"></script>
+<script src="script-planes.js"></script>
+</body>
+</html>
+

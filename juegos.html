@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juegos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Juegos 🎮</h1>
+
+    <form id="planForm" class="card">
+
+        <label>Tiempo disponible: <span id="duracionValor">12</span> horas</label>
+        <input type="range" id="duracion" min="1" max="24" value="12" step="1">
+
+        <label>Lugar</label>
+        <select id="lugar">
+            <option value="casa">Casa</option>
+            <option value="calle">Calle</option>
+        </select>
+
+        <label>Nivel de actividad</label>
+        <select id="actividad">
+            <option value="sedentario">Sedentario</option>
+            <option value="moderado">Moderado</option>
+            <option value="activo">Activo</option>
+        </select>
+
+        <button type="submit">Generar juego</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<!-- Fotos -->
+<img src="images/juegos/foto1.jpg" class="floating left1">
+<img src="images/juegos/foto2.jpg" class="floating left2">
+<img src="images/juegos/foto3.jpg" class="floating left3">
+<img src="images/juegos/foto4.jpg" class="floating right1">
+<img src="images/juegos/foto5.jpg" class="floating right2">
+<img src="images/juegos/foto6.jpg" class="floating right3">
+
+
+<!-- Carga el SDK de EmailJS-->
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+  // Inicializa EmailJS con tu Public Key
+  emailjs.init({
+    publicKey: "zh9_teCiitJuv2xDq"
+  });
+</script>
+
+<script src="planes-data.js"></script>
+<script src="script-juegos.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-container {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 400px;
+}
+
+.menu-btn {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: #ff6f91;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background: #ff4f73;
+}
+
+/* Fotos animadas */
+.menu-photo {
+    position: absolute;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 10;
+    pointer-events: none;
+    width: 160px; /* JS ajusta width dinámicamente */
+    height: 160px; /* JS ajusta height dinámicamente */
+}

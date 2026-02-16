@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f6f1eb, #e9dfd3);
+    color: #333;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 50px; 
+    text-align: center;
+    white-space: nowrap;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+
+/* Formulario */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 13px;
+    margin-top: 10px;
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 4px;
+    font-family: inherit;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #d4a373;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #c08c5a;
+}
+
+
+/* Resultado */
+.resultado .plan {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
+
+/* Fotos */
+.floating {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0.9;
+    transition: transform 0.3s ease; /* transición para hover */
+    z-index: 5;
+    transform: rotate(var(--rotate, 0deg)); /* rotación inicial */
+}
+
+.floating:hover {
+    transform: rotate(var(--rotate, 0deg)) scale(1.05); /* combinar rotación + scale */
+}
+
+
+input[type=range] {
+    width: 100%;       
+    margin-top: 5px;   
+    accent-color: #d4a373; 
+    height: 8px;       
+    border-radius: 5px; 
+}
+
+.floating-emoji {
+    position: fixed;
+    bottom: 0;
+    font-size: 24px;
+    opacity: 1;
+    pointer-events: none;
+    animation: floatUp 2s ease-out forwards;
+    user-select: none;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(var(--x, 0px)) translateY(-600px) rotate(var(--rotate, 0deg)) scale(var(--scale, 1.5));
+        opacity: 0;
+    }
+}
+
+
+
