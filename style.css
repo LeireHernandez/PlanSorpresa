@@ -11,23 +11,29 @@ body {
     background: linear-gradient(135deg, #f6f1eb, #e9dfd3);
     color: #333;
     min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: relative;
     overflow-x: hidden;
 }
 
+/* Container principal */
 .container {
     max-width: 700px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
     text-align: center;
-    position: center;
+    position: relative;
     z-index: 10;
 }
 
 h1 {
     font-weight: 600;
     margin-bottom: 15px;
-    font-size: 50px; 
+    font-size: 40px;
     text-align: center;
     white-space: nowrap;
 }
@@ -37,7 +43,6 @@ h1 {
     color: #777;
     margin-bottom: 20px;
 }
-
 
 /* Formulario */
 .card {
@@ -64,6 +69,14 @@ select {
     font-family: inherit;
 }
 
+input[type=range] {
+    width: 100%;
+    margin-top: 5px;
+    accent-color: #d4a373;
+    height: 8px;
+    border-radius: 5px;
+}
+
 button {
     margin-top: 20px;
     width: 100%;
@@ -81,7 +94,6 @@ button:hover {
     background: #c08c5a;
 }
 
-
 /* Resultado */
 .resultado .plan {
     background: white;
@@ -91,42 +103,38 @@ button:hover {
     margin-top: 20px;
 }
 
-
-/* Fotos */
+/* Fotos flotantes */
 .floating {
     position: absolute;
-    width: 15vw;
-    height: 15vw;
+    width: 22vw;
+    height: 22vw;
+    max-width: 280px;
+    max-height: 280px;
+    min-width: 160px;
+    min-height: 160px;
+
     object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    opacity: 0.9;
-    transition: transform 0.3s ease; /* transición para hover */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    opacity: 0.95;
+    transition: transform 0.3s ease;
     z-index: 5;
-    transform: rotate(var(--rotate, 0deg)); /* rotación inicial */
+    transform: rotate(var(--rotate, 0deg));
 }
 
 .floating:hover {
-    transform: rotate(var(--rotate, 0deg)) scale(1.05); /* combinar rotación + scale */
+    transform: rotate(var(--rotate, 0deg)) scale(1.05);
 }
 
-
-input[type=range] {
-    width: 100%;       
-    margin-top: 5px;   
-    accent-color: #d4a373; 
-    height: 8px;       
-    border-radius: 5px; 
-}
-
+/* Emojis flotantes */
 .floating-emoji {
     position: fixed;
     bottom: 0;
     font-size: 24px;
     opacity: 1;
     pointer-events: none;
-    animation: floatUp 2s ease-out forwards;
     user-select: none;
+    animation: floatUp 2s ease-out forwards;
     z-index: 9999;
 }
 
@@ -136,13 +144,10 @@ input[type=range] {
         opacity: 1;
     }
     100% {
-        transform: translateX(var(--x, 0px)) translateY(-600px) rotate(var(--rotate, 0deg)) scale(var(--scale, 1.5));
+        transform: translateX(var(--x, 0px))
+                   translateY(-600px)
+                   rotate(var(--rotate, 0deg))
+                   scale(var(--scale, 1.5));
         opacity: 0;
     }
 }
-
-
-
-
-
-
